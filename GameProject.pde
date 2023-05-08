@@ -38,18 +38,18 @@ void setup()
   rookB = loadImage("pngguru.com-13.png");
 }
 
-/*** draw**********************************************
- * draws everything in the function           *
- ******************************************************/
+/*** draw*************************************
+ * draws everything in the function          *
+ ********************************************/
 void draw()
 {
   background(#AA3032);
   mainBoard.draw();
 }
 
-/*** mousePressed**********************************************
+/*** mousePressed*******************************************
  * does everything in the function once mouse is pressed   *
- ******************************************************************/
+ **********************************************************/
 void mousePressed()
 {   
   mainBoard.click();
@@ -95,8 +95,8 @@ class Point
   }
 
 /*** equals  ************************************
-* compares 2 points and returns true       *
-* if they are equal                                     *
+* compares 2 points and returns true            *
+* if they are equal                             *
 ************************************************/
   boolean equals(Point other)
   {
@@ -106,9 +106,9 @@ class Point
 
 class Board
 {
-  private Cell [][] board = new Cell[num][num];//only fills in first set of pointers- which points to nulls
-  private Colour thisTurn=Colour.WHITE;//white goes first  
-  private Previous selectedCells=null;//null means no selected cells
+  private Cell [][] board = new Cell[num][num]; //only fills in first set of pointers which point to nulls
+  private Colour thisTurn=Colour.WHITE; //white goes first  
+  private Previous selectedCells=null; //null means no selected cells
   private boolean isBlackKingOrRookMove=false;
   private boolean isWhiteKingOrRookMove=false;
   private boolean pawnReachEnd=false;
@@ -179,27 +179,27 @@ class Board
     }
   }
 
-/***getFigureColour  ************************************
-  * calls getFigureColour function, which       *
-  * exists in the cell class                                 *
+/***getFigureColour  *****************************
+  * calls getFigureColour function, which        *
+  * exists in the cell class                     *
   ************************************************/
   Colour getFigureColour(Point p)
   {
     return board[p.x][p.y].getFigureColour();
   }
 
-/***getEFigure  ************************************
- * calls getEFigure function that exists  *
- * in the cell class                *
- ************************************************/
+/***getEFigure  ****************************
+ * calls getEFigure function that exists   *
+ * in the cell class                       *
+ ******************************************/
   eFigure getEFigure(Point p)
   {
     return board[p.x][p.y].getEFigure();
   }
 
 /***isFigure  ************************************
-  * returns true if there is a figure in the  *
-  * point given (any colour)                    *
+  * returns true if there is a figure in the     *
+  * point given (any colour)                     *
   ************************************************/
 //isFigure - returns true if there is a figure in the point given (any colour)
 
@@ -209,36 +209,36 @@ class Board
   }
 
 /***isFigureOppositeColour  ************************************
-  * returns true if there is a figure in the point given that       *
-  * is the opposite of the colour that is given                          *
-  ************************************************/
+  * returns true if there is a figure in the point given that  *
+  * is the opposite of the colour that is given                *
+  **************************************************************/
  boolean isFigureOppositeColour(Point p, Colour c)//if figure of opposite colour
   {
     return board[p.x][p.y].figure!=null && board[p.x][p.y].getFigureColour()!=c;
   } 
 
-/***isFigureColour  ************************************
-  * returns true if there is a figure in the point given that       *
-  * is the same colour that is given                          *
-  ************************************************/
+/***isFigureColour  **********************************************
+  * returns true if there is a figure in the point given that    *
+  * is the same colour that is given                             *
+  ***************************************************************/
   boolean isFigureColour(Point p, Colour c)//if figure of same colour
   {
     return board[p.x][p.y].figure!=null && board[p.x][p.y].getFigureColour()==c;
   } 
 
 /***isValid************************************
-  * returns true if the point given       *
-  * exists on the board                     *
-  ************************************************/
+  * returns true if the point given           *
+  * exists on the board                       *
+  ********************************************/
  boolean isValid(Point p)
   {
     return p.x>=0 && p.x<=7 && p.y>=0 && p.y<=7;
   } 
 
-/***getPossibleMoves************************************
+/***getPossibleMoves***************************
   * returns the possible moves of where       *
-  * the given figure can go                    *
-  ************************************************/
+  * the given figure can go                   *
+  ********************************************/
   ArrayList<Point> getPossibleMoves (Point p, eFigure f, Colour c)
   {
     switch(f)
@@ -258,10 +258,10 @@ class Board
     }
   }  
 
- /***getPossibleKingMoves************************************
+ /***getPossibleKingMoves****************
   * returns the possible moves of       *
-  * the king                    *
-  ************************************************/
+  * the king                            *
+  **************************************/
   ArrayList<Point> getPossibleKingMoves (Point p, Colour c)
   {
     ArrayList<Point> possibleMoves =new ArrayList<Point>();
@@ -326,10 +326,10 @@ class Board
     return possibleMoves;
   }
 
- /***getPossiblePawnMoves************************************
+ /***getPossiblePawnMoves*****************
   * returns the possible moves of       *
-  * the pawns               *
-  ************************************************/
+  * the pawns                           *
+  **************************************/
   ArrayList<Point> getPossiblePawnMoves (Point p, Colour c)
   {
     ArrayList<Point> possibleMoves =new ArrayList<Point>();
@@ -377,10 +377,10 @@ class Board
     return possibleMoves;
   }
 
- /***getPossibleBishopMoves************************************
+ /***getPossibleBishopMoves**************
   * returns the possible moves of       *
-  * the bishops               *
-  ************************************************/
+  * the bishops                         *
+  **************************************/
   ArrayList<Point> getPossibleBishopMoves (Point p, Colour c)
   {   
     ArrayList<Point> possibleMoves =new ArrayList<Point>();
@@ -451,10 +451,10 @@ class Board
     }   
     return possibleMoves;
   }
- /***getPossibleRookMoves************************************
-  * returns the possible moves of       *
-  * the rooks              *
-  ************************************************/
+ /***getPossibleRookMoves*****************
+  * returns the possible moves of        *
+  * the rooks                            *
+  ***************************************/
   ArrayList<Point> getPossibleRookMoves (Point p, Colour c)
   {
     ArrayList<Point> possibleMoves =new ArrayList<Point>();
@@ -526,10 +526,10 @@ class Board
     return possibleMoves;
   }
 
- /***getPossibleQueenMoves************************************
+ /***getPossibleQueenMoves***************
   * returns the possible moves of       *
-  * the queens            *
-  ************************************************/
+  * the queens                          *
+  **************************************/
   ArrayList<Point> getPossibleQueenMoves (Point p, Colour c)
   {
     ArrayList<Point> possibleMoves =getPossibleRookMoves(p, c);
@@ -537,10 +537,10 @@ class Board
     return possibleMoves;
   }   
 
- /***getPossibleKnightMoves************************************
+ /***getPossibleKnightMoves**************
   * returns the possible moves of       *
-  * the knights               *
-  ************************************************/
+  * the knights                         *
+  **************************************/
   ArrayList<Point> getPossibleKnightMoves (Point p, Colour c)
   {
     ArrayList<Point> possibleMoves =new ArrayList<Point>();
@@ -571,10 +571,10 @@ class Board
     return possibleMoves;
   }
 
-/***getcell  *************************************************************
+/***getcell  ******************************************************
   * returns the point(the column and row on the chess board)      *
-  * that the mouse has clicked on                                                  *
-  *************************************************************************/
+  * that the mouse has clicked on                                 *
+  ****************************************************************/
   Point getcell()
   {
     if (mouseX-indentXBoard>=0 && mouseX-indentXBoard<=640 && mouseY-indentYBoard>=0&& mouseY-indentYBoard<=640)
@@ -583,10 +583,10 @@ class Board
       return null;
   }
 
-/***click *************************************************************
+/***click **************************************
   * it will complete all appropriate tasks     *
-  * when the mouse is pressed                   *
-  *************************************************************************/
+  * when the mouse is pressed                  *
+  *********************************************/
   void click()
   {
     if (pawnReachEnd==true)
@@ -684,9 +684,9 @@ class Board
     ArrayList<Point> previousMoves = new ArrayList<Point>();
 
  /***isMovePossible************************************
-  * returns true if the figure in the point clicked       *
-  * can move to where you clicked         *
-  ************************************************/
+  * returns true if the figure in the point clicked   *
+  * can move to where you clicked                     *
+  ****************************************************/
    boolean isMovePossible(Point cellClicked)
     {
       boolean answer=false;
@@ -715,10 +715,10 @@ class Board
       board[moves.get(i).x][moves.get(i).y].isSelected=true;
   }
 
- /***erase************************************
-   *it moves the figure from where it was to     *
-  *its new location which the user provided     *
-  ************************************************/
+ /***erase*************************************
+  *it moves the figure from where it was to   *
+  *its new location which the user provided   *
+  ********************************************/
   void erase()
   {
     for (int i = 0; i<selectedCells.previousMoves.size(); i++)
@@ -726,10 +726,10 @@ class Board
     board[selectedCells.previousCellClicked.x][selectedCells.previousCellClicked.y].isFigureSelected=false;
   }
 
- /***draw************************************
-   *draws everything in the function, makes changes        *
-  *and calls draw() function that exists in the cell class     *
-  ************************************************/
+ /***draw*******************************************************
+  * draws everything in the function, makes changes            *
+  * and calls draw() function that exists in the cell class    *
+  **************************************************************/
   void draw()
   {
     for (int x=0; x<num; x++)
@@ -816,10 +816,10 @@ class Cell
     }
   }
 
- /***getEFigureColour************************************
+ /***getEFigureColour**********************
    *calls getEFigureColour function       *
   * that exists in the figure classes     *
-  ************************************************/
+  ****************************************/
   eFigure getEFigure()
   {
     if (figure == null)
@@ -828,10 +828,10 @@ class Cell
     return figure.getEFigure();
   }
 
- /***getFigureColour************************************
+ /***getFigureColour**********************
    *calls getFigureColour function       *
-  * that exists in the figure class     *
-  ************************************************/
+  * that exists in the figure class      *
+  ***************************************/
   Colour getFigureColour()
   {
     if (figure == null)
@@ -839,10 +839,10 @@ class Cell
     return figure.getFigureColour();
   }
 
- /***draw************************************
-   *draws everything in the function, makes new changes     *
-  *and calls draw() function that exists in the figure class     *
-  ************************************************/
+ /***draw*******************************************************
+   *draws everything in the function, makes new changes        *
+  *and calls draw() function that exists in the figure class   *
+  *************************************************************/
   void draw()//draws cell and calls to draw figure
   {  
     if (isSelected==true) 
@@ -867,16 +867,16 @@ class Figure //base class which allows for other classes to be stored in an obje
 {
   Colour colour;  
  /***draw************************************
-   *draws everything in the function      *
-  * (basically draws the figure)             *
-  ************************************************/
+   *draws everything in the function        *
+  * (basically draws the figure)            *
+  ******************************************/
   void draw(int x, int y)// virtual function - allows us to use functions in other classes that inherit this one
   {
   }
 
  /***getEFigure************************************
-   *returns the name of the figure of the        *
-  * point that is given (returns an enum)       *
+   *returns the name of the figure of the         *
+  * point that is given (returns an enum)         *
   ************************************************/
   eFigure getEFigure()
   {
@@ -884,9 +884,9 @@ class Figure //base class which allows for other classes to be stored in an obje
   }
 
  /***getFigureColour************************************
-   *returns the name of the colour for the figure of      *
-  * the point that is given (returns an enum)              *
-  ************************************************/
+   *returns the name of the colour for the figure of   *
+  * the point that is given (returns an enum)          *
+  *****************************************************/
   Colour getFigureColour()
   {
     return null;
