@@ -1,10 +1,7 @@
-/********************************************************************************** //<>// //<>// //<>// //<>//
-*  Name: Elizabeth Loubenski, Tyler Yan, Mridul Mittal, Anthony Lee               *
-*  Course: ICS 4U Pd. 7                                                           *
-*  Final Project: Chess                                                           *
-*  Purpose: 2 player Chess                                                        *
-*  Due Date: June 4, 2021                                                         *
-************************************************************************************/
+/*****************************************************************//<>// //<>// //<>// //<>//
+*  Name: Elizabeth L, Tyler Y, Mridul M, Anthony L               *            
+*  Purpose: 2 player Interactive Chess Board                     *
+*****************************************************************/
 PFont f; //<>//
 PImage bishop;
 PImage knight;
