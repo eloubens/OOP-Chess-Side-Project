@@ -1,6 +1,6 @@
 # OOP-Chess-Project
 An interactive object oriented chess board game written in Java, utilizing Processing language libraries. 
-Includes castling, prohibition of moves (e.g., not active player, illegal figure moves, some castling conditions not met), pawn promotion, and UI design (legal moves light up once figure is selected, active player is displayed on screen)
+Includes castling, prohibition of moves (e.g., not active player, illegal moves, castling conditions not being met), pawn promotion, and UI design (legal moves light up once figure is selected, active player is displayed on screen)
 
 Guide:
 This project will allow 2 players to play chess against one another. Players will take turns moving their chess pieces by clicking on them with their mouse. After the player has clicked where he/she wants the piece to move, that will be the piece’s final position. There is no undo move feature.
