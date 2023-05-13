@@ -30,4 +30,4 @@ The program will not recognize a checkmate or stalemate and will allow for the g
 The program will allow the king to take pieces, even if taking said piece will cause for the king to be in check
 The program will not be able to recognize that moving one of its own pieces will cause for the king to be in check, and it will allow for said piece to be moved. 
 
-*.pde linguist-language=Java
+
