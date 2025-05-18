@@ -1,4 +1,4 @@
-# OOP-Chess-Side-Project
+# Chess
 An interactive object oriented chess board game written in Java, utilizing Processing language libraries. 
 Includes castling, prohibition of moves (e.g., not active player, illegal moves, castling conditions not being met), pawn promotion, and UI design (legal moves light up once figure is selected, active player is displayed on screen)
 
